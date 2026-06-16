@@ -1,202 +1,228 @@
-# Html To Video Pixie
+# Html To Video Pixie v1.0.0
 
-<div align="center">
+> **Turn text prompts into videos via AI-generated HTML. No coding required.**
 
-![Logo](logo.png)
+<p align="center">
+  <img src="logo.png" width="128" alt="Html To Video Pixie Logo">
+</p>
 
-**AI Video Generation Tool**
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#how-it-works">How It Works</a> •
+  <a href="#comparison">Comparison</a> •
+  <a href="#download">Download</a>
+</p>
 
-Describe your video needs in natural language, AI generates HTML/CSS animation, one-click render to MP4 video or GIF.
+---
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)]()
+## 📖 Overview
 
-</div>
+**Html To Video Pixie** is an AI-powered desktop application that transforms natural language descriptions into HTML/CSS animations, then renders them as high-quality MP4 videos or GIF animations.
+
+Simply describe what you want in plain language, and the AI generates the HTML code. The built-in rendering engine converts it to video — no coding skills required.
 
 ## ✨ Features
 
-- 🎯 **AI Chat Generation** - Natural language input, AI understands and generates animation code
-- 🌐 **Bilingual UI** - Support Chinese/English interface switching
-- 🤖 **Multi-Model Support** - Compatible with OpenAI, DeepSeek, Xiaomi MiMo and other providers
-- 🎨 **Real-time Preview** - WYSIWYG, streaming HTML/CSS animation code output
-- 🎬 **Video Export** - Support MP4 and GIF formats
-- 💾 **Creation Management** - Auto-save creations, import/export HTML
-- 💬 **Chat Management** - Save/load/delete chat history with multi-turn context
+### Core Capabilities
+- **Natural Language to Video** — Describe your animation in words, get a video
+- **Real-time Preview** — See the HTML animation instantly as AI generates it
+- **Dual Output Formats** — Export as MP4 video or animated GIF
+- **Built-in Code Editor** — Fine-tune the generated HTML directly in the app
+
+### AI Integration
+- **Multi-Model Support** — OpenAI, DeepSeek, Qwen, Zhipu AI, Xiaomi MiMo, and more
+- **Custom Providers** — Add any OpenAI-compatible API service
+- **Streaming Output** — Watch AI generate code in real-time
+
+### User Experience
+- **Bilingual Interface** — English and Chinese with one-click switching
+- **No Installation Hassle** — Pre-packaged installer with FFmpeg included
+- **Auto-save** — All creations and chat history preserved automatically
+- **Import HTML** — Load existing HTML files for rendering
 
 ## 🚀 Quick Start
 
-### Option 1: Installer (Recommended)
-
+### Option 1: Download Installer (Recommended)
 1. Download `HtmlToVideoPixieInstaller.exe`
-2. Double-click to run installer
-3. Select install directory (default `C:\Program Files\HtmlToVideoPixie\`)
-4. Check to create desktop/start menu shortcuts
-5. Click "Install"
+2. Run installer (requires administrator privileges)
+3. Launch from desktop shortcut or Start Menu
 
 ### Option 2: Run from Source
-
 ```bash
-# Clone project
-git clone https://github.com/FatFatYoung/HtmlToVideoPixie.git
-cd HtmlToVideoPixie
-
 # Install dependencies
-pip install requests playwright pillow
-playwright install
+pip install playwright requests Pillow tkinterweb
 
-# Run program
+# Install Playwright browsers
+playwright install chromium
+
+# Ensure FFmpeg is in PATH
+ffmpeg -version
+
+# Run the application
 python main_tkinter.py
 ```
 
-## 🌐 Language Switch
-
-After starting the program, click the language switch button in the top-right corner:
-- Default English interface, button shows "简体中文"
-- Click to switch to Chinese interface, button becomes "English"
-
-## ⚙️ Configure AI Provider
-
-### In-App Configuration (Recommended)
-
-1. Start program
-2. Click **Model Settings**
-3. Click **Add Provider**
-4. Fill in provider info:
-   - Name: Custom name
-   - API URL: Provider's API endpoint
-   - API Key: Your API key
-   - Model ID: Model name to use
-5. Click **Save**
-
-### Supported Providers
-
-| Provider | API URL | Model Examples |
-|--------|---------|----------|
-| OpenAI | `https://api.openai.com/v1` | gpt-4-turbo, gpt-3.5-turbo |
-| DeepSeek | `https://api.deepseek.com` | deepseek-chat |
-| Xiaomi MiMo | `https://api.xiaomimimo.com/v1` | mimo-v2.5-pro |
-| Tongyi Qianwen | `https://dashscope.aliyuncs.com/compatible-mode/v1` | qwen-turbo |
-| Zhipu AI | `https://open.bigmodel.cn/api/paas/v4` | glm-4-flash |
-
-> All providers compatible with OpenAI format can be used
-
-## 📖 Usage
-
-### Basic Operations
-
-| Operation | Description |
-|------|------|
-| **Enter** | Send message |
-| **Ctrl+Enter** | New line |
-| **Operation → New Chat** | Start new chat |
-| **Operation → Import HTML** | Import HTML from local |
-| **Operation → Creations** | View creations |
-| **Operation → Chat History** | Load/delete chats |
-| **Model Settings** | Add/edit providers |
-| **Generate Video** | Choose MP4/GIF |
-
-### Example
+## 🎯 How It Works
 
 ```
-You: Generate an animation of the solar system with eight planets orbiting the sun
-AI: [Thinking...]
-AI: [Creating...]
-AI: [Creation completed]
-    Video settings dialog will pop up automatically
+┌─────────────────────────────────────────────────────────────────┐
+│                    Html To Video Pixie                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐  │
+│   │   User Input │ ──► │   AI Model   │ ──► │  HTML/CSS    │  │
+│   │  (Natural    │     │  (GPT-4o,    │     │  Animation   │  │
+│   │   Language)  │     │  DeepSeek..) │     │   Code       │  │
+│   └──────────────┘     └──────────────┘     └──────┬───────┘  │
+│                                                     │          │
+│                                                     ▼          │
+│   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐  │
+│   │   MP4/GIF   │ ◄── │    FFmpeg    │ ◄── │  Playwright  │  │
+│   │   Output    │     │   Encoding   │     │   Browser    │  │
+│   └──────────────┘     └──────────────┘     │  Rendering   │  │
+│                                              └──────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🛠️ Architecture
+**Technical Stack:**
+- **GUI**: Python tkinter (lightweight, cross-platform)
+- **AI**: OpenAI-compatible API with streaming
+- **Rendering**: Playwright (headless Chromium/Edge)
+- **Encoding**: FFmpeg (MP4/GIF output)
 
-```
-User Input (Natural Language)
-        ↓
-   tkinter Dialog Interface
-        ↓
-   AI API (Streaming SSE)
-        ↓
-   HTML/CSS Animation Code
-        ↓
-   Auto Video Settings Dialog
-        ↓
-   Playwright (Edge/Chrome Rendering)
-        ↓
-   FFmpeg Encoding
-        ↓
-   MP4 / GIF Output
-```
+## 🆚 Comparison
+
+### vs Other HTML-to-Video Tools
+
+| Project | Core Idea | Target Users | Tech Stack |
+|---------|-----------|--------------|------------|
+| **HtmlToVideoPixie** | Natural Language → HTML → Video | Non-programmers, creators | Python, Tkinter, AI API |
+| Remotion | React Components → Video | Frontend developers | React, TypeScript, Node.js |
+| HyperFrames | HTML Source → Video | AI Agents, developers | HTML, CSS, JavaScript |
+| html-video | Data → Multi-frame HTML → Video | Automation, Coding Agents | Python, Chrome, FFmpeg |
+
+### vs AI Video Models (Sora/Kling)
+
+| Aspect | HtmlToVideoPixie | Sora/Kling |
+|--------|------------------|------------|
+| **Control** | Precise, deterministic (code-based) | Probabilistic (diffusion-based) |
+| **Text Rendering** | Vector-sharp, perfect for subtitles | Often garbled/unreadable |
+| **Resolution** | Unlimited (4K/8K possible) | Limited to 1080p |
+| **Style** | Geometric, data-viz, presentations | Photorealistic, cinematic |
+| **Editability** | Direct code editing | Re-prompt required |
+
+### Unique Advantages
+- **Exact Timing Control** — "Rotate 45° at exactly 3 seconds" is possible
+- **Crystal Clear Text** — Perfect for data visualization, PPT animations, subtitles
+- **Infinite Scalability** — Vector graphics scale to any resolution
+- **Code-Level Precision** — Every pixel is deterministic and reproducible
 
 ## 📁 Project Structure
 
 ```
 HtmlToVideoPixie/
-├── main_tkinter.py         # Main entry
-├── core/
-│   ├── ai_client.py        # AI Client
-│   ├── video_generator.py  # Video Generator
-│   └── i18n.py             # Internationalization
+├── main_tkinter.py          # Main application
+├── installer.py             # Installer script
+├── build_installer.bat      # Build script
+├── logo.ico                 # Application icon
+├── logo.png                 # Original logo
 ├── config/
-│   └── providers.json      # Provider Config
-├── data/                   # Creations/Chats
-├── output/                 # Video Output
-├── temp/                   # Temp Files
-├── logo.png                # Project Logo
-├── logo.ico                # App Icon
-├── installer.py            # Installer
-├── build_installer.bat     # Build Script
-├── LICENSE                 # MIT License
-└── README.md
+│   └── providers.json       # AI provider configuration
+├── core/
+│   ├── ai_client.py         # AI API client
+│   ├── video_generator.py   # Video rendering engine
+│   └── i18n.py              # Internationalization
+├── README.md                # This file
+└── LICENSE                  # MIT License
 ```
 
-## 🔧 Requirements
+## ⚙️ Configuration
 
-| Component | Requirement |
-|------|------|
-| Python | 3.10+ (for source code) |
-| FFmpeg | Bundled in installer |
-| Browser | Edge or Chrome (Playwright) |
-| AI Provider | API Key required |
+### Adding Custom AI Providers
 
-## 📦 Build Installer
+1. Open **Settings → Model Settings**
+2. Click **Add Provider**
+3. Fill in:
+   - **Name**: Display name (e.g., "My DeepSeek")
+   - **API URL**: Base URL (e.g., `https://api.deepseek.com/v1`)
+   - **API Key**: Your API key
+   - **Model ID**: Model name (e.g., `deepseek-chat`)
+4. Click **Save**
 
-```bash
-# Install build dependencies
-pip install pyinstaller
+Configuration is stored in `%APPDATA%\HtmlToVideoPixie\providers.json`
 
-# Prepare FFmpeg
-# Place ffmpeg.exe in project root
+### Supported AI Services
 
-# Run build script
-build_installer.bat
+- OpenAI (GPT-4o, GPT-4-turbo)
+- DeepSeek (deepseek-chat, deepseek-coder)
+- Qwen (qwen-turbo, qwen-plus)
+- Zhipu AI (glm-4)
+- Xiaomi MiMo
+- Any OpenAI-compatible API
 
-# Output: installer_build/HtmlToVideoPixieInstaller.exe
+## 💡 Tips for Best Results
+
+### Prompt Engineering
+
+**Good Prompt:**
 ```
+Create a colorful bar chart animation showing monthly sales data:
+- 5 bars for Jan to May
+- Each bar grows from bottom with a smooth ease-out animation
+- Bars appear one by one with 0.3s delay
+- Show value labels on top of each bar
+- Use gradient colors: blue to purple
+```
+
+**Why it works:**
+- Specific element count and names
+- Clear animation description
+- Timing parameters
+- Visual style details
+
+### Editing Workflow
+
+1. **Generate** — Let AI create initial code
+2. **Preview** — Check animation in preview pane
+3. **Edit** — Adjust values in the code editor
+4. **Iterate** — Regenerate if needed
+5. **Export** — Save as MP4 or GIF
+
+## 📋 System Requirements
+
+- **OS**: Windows 10/11 (64-bit)
+- **RAM**: 4GB minimum, 8GB recommended
+- **Disk**: 500MB free space
+- **Network**: Required for AI API calls
+
+## 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| FFmpeg not found | Install FFmpeg and add to PATH |
+| Browser launch failed | Run `playwright install chromium` |
+| API connection error | Check API key and network |
+| Video generation slow | Reduce duration/FPS in settings |
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT License - See [LICENSE](LICENSE) for details.
 
-### Third-Party Licenses
+## 🙏 Acknowledgments
 
-| Library | License | Copyright |
-|----|--------|------|
-| requests | Apache 2.0 | Copyright 2019 Kenneth Reitz |
-| playwright-python | Apache 2.0 | Copyright 2011-2024 Microsoft Corporation |
-| Pillow | HPND | Copyright 1997-2024 Alex Clark and contributors |
-| FFmpeg | LGPL/GPL | Copyright 2000-2024 FFmpeg developers |
+- [Playwright](https://playwright.dev/) — Browser automation
+- [FFmpeg](https://ffmpeg.org/) — Video encoding
+- [Pillow](https://python-pillow.org/) — Image processing
+- [tkinterweb](https://tkinterweb.readthedocs.io/) — HTML preview
 
-See [LICENSE](LICENSE) file for details.
+## 📧 Contact
 
-## 👤 Author
-
-- **FatFatYoung**
-- GitHub: [@FatFatYoung](https://github.com/FatFatYoung)
-- Project: [Html To Video Pixie](https://github.com/FatFatYoung/HtmlToVideoPixie)
+- GitHub: [FatFatYoung/HtmlToVideoPixie](https://github.com/FatFatYoung/HtmlToVideoPixie)
+- Issues: [Report a bug](https://github.com/FatFatYoung/HtmlToVideoPixie/issues)
 
 ---
 
-<div align="center">
-
-**If you find this useful, please give a ⭐ Star!**
-
-</div>
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/FatFatYoung">FatFatYoung</a>
+</p>
