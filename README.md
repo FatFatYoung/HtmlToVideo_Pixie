@@ -218,7 +218,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## 📧 Contact
 
-- GitHub: [FatFatYoung/HtmlToVideoPixie](https://github.com/FatFatYoung/HtmlToVideoPixie)
+- GitHub: [FatFatYoung/HtmlToVideoPixie](https://github.com/FatFatYoung/HtmlToVideo_Pixie)
 - Issues: [Report a bug](https://github.com/FatFatYoung/HtmlToVideoPixie/issues)
 
 ---
